@@ -1,0 +1,37 @@
+<mat-card class="shadow-lg rounded-xl p-4 max-w-2xl mx-auto">
+  <h3 class="mb-4 text-xl font-semibold">Leave Request Details</h3>
+
+  <div class="mb-3">
+    <strong>Name:</strong>
+    <span class="ms-2">{{ leaveRequest?.employeeName }}</span>
+  </div>
+
+  <div class="mb-3">
+    <strong>From:</strong>
+    <span class="ms-2">{{ leaveRequest?.startDate }}</span>
+  </div>
+
+  <div class="mb-3">
+    <strong>To:</strong>
+    <span class="ms-2">{{ leaveRequest?.endDate }}</span>
+  </div>
+
+  <div class="mb-3">
+    <strong>Reason:</strong>
+    <span class="ms-2">{{ leaveRequest?.reason }}</span>
+  </div>
+
+  <div class="mb-3">
+    <strong>Remaining:</strong>
+    <span class="ms-2">{{ leaveRequest?.remaining }}</span>
+  </div>
+
+  <div class="mb-3">
+    <strong>Status:</strong>
+    <span class="badge bg-info text-dark text-capitalize ms-2">{{ leaveRequest?.status }}</span>
+  </div>
+
+  <button class="btn btn-outline-secondary mt-5 w-75 m-auto" (click)="backToList()">Back</button>
+</mat-card>
+
+<app-loader [loader]="loading"></app-loader>

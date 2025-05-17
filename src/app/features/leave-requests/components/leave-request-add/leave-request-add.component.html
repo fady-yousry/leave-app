@@ -1,0 +1,87 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header bg-main text-white">
+      <h4 class="mb-0">Leave Request Form</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()" novalidate>
+        
+        <!-- Employee Name -->
+        <div class="form-group mb-5">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Employee Name</mat-label>
+            <input matInput formControlName="employeeName" placeholder="Enter your full name">
+            <mat-error *ngIf="f['employeeName'].errors?.['required'] && (f['employeeName'].touched || submitted)">
+              Employee name is required
+            </mat-error>
+            <mat-error *ngIf="f['employeeName'].errors?.['minlength'] && (f['employeeName'].touched || submitted)">
+              Employee name must be at least 3 characters
+            </mat-error>
+            <mat-error *ngIf="f['employeeName'].errors?.['maxlength'] && (f['employeeName'].touched || submitted)">
+              Employee name cannot exceed 50 characters
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Date Range Row -->
+        <div class="row mb-4">
+          <!-- Start Date -->
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Start Date</mat-label>
+              <input matInput [matDatepicker]="startPicker" formControlName="startDate" [min]="minDate">
+              <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+              <mat-datepicker #startPicker></mat-datepicker>
+              <mat-error *ngIf="f['startDate'].errors?.['required'] && (f['startDate'].touched || submitted)">
+                Start date is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- End Date -->
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>End Date</mat-label>
+              <input matInput [matDatepicker]="endPicker" formControlName="endDate" [min]="minDate">
+              <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+              <mat-datepicker #endPicker></mat-datepicker>
+              <mat-error *ngIf="f['endDate'].errors?.['required'] && (f['endDate'].touched || submitted)">
+                End date is required
+              </mat-error>
+              <mat-error *ngIf="f['endDate'].errors?.['dateRange'] && (f['endDate'].touched || submitted)">
+                End date must be greater than start date
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Reason -->
+        <div class="form-group mb-5">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Reason for Leave</mat-label>
+            <textarea matInput formControlName="reason" rows="4" placeholder="Please provide a detailed reason for your leave request"></textarea>
+            <mat-error *ngIf="f['reason'].errors?.['required'] && (f['reason'].touched || submitted)">
+              Reason is required
+            </mat-error>
+            <mat-error *ngIf="f['reason'].errors?.['minlength'] && (f['reason'].touched || submitted)">
+              Reason must be at least 10 characters
+            </mat-error>
+            <mat-error *ngIf="f['reason'].errors?.['maxlength'] && (f['reason'].touched || submitted)">
+              Reason cannot exceed 500 characters
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="d-flex justify-content-end mt-4">
+          <button type="button" mat-stroked-button color="warn" class="me-3" (click)="resetForm()">
+            Clear
+          </button>
+          <button type="submit" mat-raised-button color="success">
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

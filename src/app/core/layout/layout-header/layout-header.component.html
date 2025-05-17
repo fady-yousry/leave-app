@@ -1,0 +1,21 @@
+<div class="header-container">
+    <div class="d-flex user-action align-items-center justify-content-end user-container pt-2">
+        <img src="assets/icons/profile.svg" class="cursor me-2 " (click)="showLogOut=!showLogOut" width="20"
+            height="20" alt="" srcset="">
+        <div>
+            Admin
+        </div>
+        <div class="logout-container">
+            <img src="assets/icons/arrow-down.svg" class="cursor ms-2 " (click)="showLogOut=!showLogOut" width="35"
+                height="35" alt="" srcset="">
+            @if (showLogOut) {
+            <div class="logout" (click)="onLogOut()">
+                <img src="assets/icons/logout.svg" class="cursor me-2" (click)="showLogOut=!showLogOut" width="35"
+                    height="35" alt="" srcset="">
+                <span>log out</span>
+            </div>
+            }
+        </div>
+    </div>
+
+</div>

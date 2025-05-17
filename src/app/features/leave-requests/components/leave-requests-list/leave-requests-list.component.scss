@@ -1,0 +1,7 @@
+.add-btn{
+    background-color: var(--main-color);
+    &:hover {
+        background-color: #E77B31;
+        opacity: 0.9;
+    }
+}

@@ -1,0 +1,40 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.content {
+  padding: 20px;
+}
+
+mat-nav-list a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-text {
+  margin-left: 10px;
+}
+
+// Active route styling
+.active-link {
+  background-color: rgba(0, 0, 0, 0.04);
+  font-weight: 500;
+}
+
+// For small screens
+@media (max-width: 768px) {
+  .sidenav {
+    width: 200px;
+  }
+  
+}

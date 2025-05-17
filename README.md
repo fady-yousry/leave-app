@@ -1,27 +1,53 @@
-# Brite
+# Angular Leave Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.17.
+A simple leave management system built using Angular 18.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Dashboard Statistics
+- Submit leave requests
+- Approve/reject by admin
+- Leave request details view
+- Leave request list with filters and Pagination.
 
-## Code scaffolding
+## 🛠️ Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 18
+- Angular Material
+- Bootstrap
+- Reactive forms with validators
+- Angular Routing 
+- Component-level separation and reusability (shared table)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Notes 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+filter , search , pagination are made in front end (for now view) , but using event emitter will send it to back end request
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Screenshots
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Leave Form
+![Leave Form](screenshots/form.png)
+
+### Form Validations
+![Leave validations](screenshots/validations.png)
+
+### Leave List
+![Leave list](screenshots/list.png)
+
+### View Leave Request
+![Leave view](screenshots/view.png)
+
+## Installation
+
+```bash
+npm install
+ng serve

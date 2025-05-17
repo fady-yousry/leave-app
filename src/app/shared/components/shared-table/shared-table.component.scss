@@ -1,0 +1,22 @@
+:host ::ng-deep input.form-control:focus,
+:host ::ng-deep select.form-select:focus {
+    border-color: var(--main-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(186, 93, 6, 0.25);
+}
+
+:host ::ng-deep .pagination .page-link {
+    color: var(--main-color);
+    border-color: var(--main-color);
+    font-weight: bold;
+}
+
+:host ::ng-deep .pagination .page-item.active .page-link {
+    background-color: var(--main-color);
+    color: #fff;
+    border-color: var(--main-color);
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}

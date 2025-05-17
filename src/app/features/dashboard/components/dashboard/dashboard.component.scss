@@ -1,0 +1,54 @@
+
+.leave-card {
+  border: none;
+  border-radius: 1rem;
+
+  .card-title {
+    font-weight: bold;
+    color: var(--main-color);
+  }
+
+  ul {
+    li {
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  .leave-indicator {
+    .circular-chart {
+      display: block;
+      margin: auto;
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    .circle-bg {
+      fill: none;
+      stroke: #eee;
+      stroke-width: 3.8;
+    }
+
+    .circle {
+      fill: none;
+      stroke-width: 2.8;
+      stroke: var(--main-color);
+      stroke-linecap: round;
+      animation: progress 1s ease-out forwards;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    .percentage {
+      fill: var(--main-color);
+      font-size: 0.5em;
+      text-anchor: middle;
+    }
+
+    @keyframes progress {
+      0% {
+        stroke-dasharray: 0 100;
+      }
+    }
+  }
+}

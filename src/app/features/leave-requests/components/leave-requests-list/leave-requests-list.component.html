@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-end align-items-center mb-3">
+  <button (click)="gotoAddLeaveRequest()" class="btn add-btn text-white float-right">+ Add New Request</button>
+</div>
+<app-shared-table [data]="leaveRequests" (approve)="handleApprove($event)" (decline)="handleDecline($event)"
+  (filterChanged)="selectedFilter($event)" (rowClicked)="viewLeaveRequest($event)" />
+<app-loader [loader]="loading"></app-loader>

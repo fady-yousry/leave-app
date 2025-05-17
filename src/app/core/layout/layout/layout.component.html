@@ -1,0 +1,29 @@
+<div class="layout-container">
+  <app-layout-header></app-layout-header>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav [mode]="'side'" [opened]="true" [fixedInViewport]="true" class="sidenav">
+      <mat-nav-list>
+        <div class="d-flex justify-content-center my-2">
+          <img fetchpriority="high" width="100" height="50"
+            src="https://gobrite.net/wp-content/uploads/2023/09/Brite-Logo-Orange-1-1.png" alt="brite logo">
+        </div>
+        <div class="mt-4">
+          <a mat-list-item *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active-link">
+            <div class="d-flex justify-content-start align-items-center">
+              <mat-icon>{{item.icon}}</mat-icon>
+              <span class="nav-item-text">{{item.name}}</span>
+            </div>
+          </a>
+        </div>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
